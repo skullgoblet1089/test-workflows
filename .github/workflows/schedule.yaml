@@ -1,0 +1,32 @@
+name: test-workflows/dispatched
+on:
+  workflow_dispatch
+jobs:
+  default:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version-file: .python-version
+      - name: Run main
+        run: python -m main
+      - name: Set git username and email
+        run: |
+          git config --global user.name dev+github
+          git config --global user.email dev+github@bit.fish
+      - name: Set timestamp
+        id: vars
+        run: echo ::set-output name=timestamp::$(date -u +"%Y-%m-%dT%H:%M:%d")
+      - name: Update log
+        run: |
+          touch workflows.log
+          echo ${{ steps.vars.outputs.timestamp }} >> workflows.log
+      - uses: stefanzweifel/git-auto-commit-action@v4
+      # - name: Commit
+      #   run: |
+      #     git add workflows.log
+      #     git commit -m "(automated) test-workflows ${{ steps.vars.outputs.timestamp }}"
