@@ -1,8 +1,9 @@
-name: test-workflows/dispatched
+name: test-workflows/scheduled
 on:
-  workflow_dispatch
+  schedule:
+    cron: */15 * * * *
 jobs:
-  dispatch:
+  cron:
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
