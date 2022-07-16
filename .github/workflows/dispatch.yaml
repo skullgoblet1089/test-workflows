@@ -23,7 +23,7 @@ jobs:
           echo ${{ steps.vars.outputs.timestamp }} >> workflows.log
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_author: dev+github
+          commit_author: dev+github <dev+github@bit.fish>
           commit_user_name: dev+github
           commit_user_email: dev+github@bit.fish
           commit_message: (automated) test-workflows ${{ steps.vars.outputs.timestamp }}
