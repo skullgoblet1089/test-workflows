@@ -16,7 +16,7 @@ jobs:
         run: python -m main
       - name: Set timestamp
         id: vars
-        run: echo ::set-output name=timestamp::$(date -u +"%Y-%m-%dT%H:%M:%d")
+        run: echo ::set-output name=timestamp::$(date -u +"%Y-%m-%d %H:%M:%d")
       - name: Update log
         run: |
           touch workflows.log
