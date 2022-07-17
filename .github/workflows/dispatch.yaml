@@ -15,7 +15,6 @@ jobs:
       - name: Run main
         run: python -m main
       - name: Set timestamp
-        id: vars
         run: echo ::set-output name=timestamp::$(date -u +"%Y-%m-%d %H:%M:%d")
       - name: Update log
         run: |
@@ -26,4 +25,4 @@ jobs:
           file_pattern: '*.log'
           commit_user_name: dev+github
           commit_user_email: dev+github@bit.fish
-          commit_message: (automated) test-workflows $(date -u +"%Y-%m-%d %H:%M:%d")
+          commit_message: (automated) test-workflows ${{ steps.vars.outputs.timestamp }}
