@@ -25,5 +25,5 @@ jobs:
         with:
           file_pattern: '*.log'
           commit_user_name: dev+github
-          commit_user_email: dev+github@bit.fish
+          commit_user_email: dev@bit.fish
           commit_message: (automated) test-workflows ${{ steps.vars.outputs.timestamp }}
