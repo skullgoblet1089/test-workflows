@@ -24,6 +24,6 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           file_pattern: '*.log'
-          commit_user_name: dev+github
-          commit_user_email: dev@bit.fish
+          commit_user_name: engineering-bitfish
+          commit_user_email: engineering@bit.fish
           commit_message: (automated) test-workflows ${{ steps.vars.outputs.timestamp }}
