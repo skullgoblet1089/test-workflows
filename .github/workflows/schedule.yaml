@@ -25,7 +25,7 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           file_pattern: '*.log'
-          commit_author: dev+github <dev@bit.fish>
-          commit_user_name: engineering-bitfish
-          commit_user_email: dev@bit.fish
+          commit_author: cmc-daily-price <cmc-daily-price@stake.fish>
+          commit_user_name: cmc-daily-price
+          commit_user_email: cmc-daily-price@stake.fish
           commit_message: (automated) test-workflows
